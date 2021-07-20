@@ -187,7 +187,7 @@ ENV=dev
 
 --
 
-create backend/plugins/mongodb.ts
+create backend/src/plugins/mongodb.ts
 
 ```javascript=
 import mongoose from 'mongoose'

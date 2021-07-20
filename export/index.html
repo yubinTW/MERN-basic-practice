@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>title</title>
+  <title>MERN Project Overview</title>
 
   <meta name="description" content="">
   <meta name="author" content="">
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="libs/reveal.js/font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="libs/reveal.js/3.8.0/css/reveal.css">
   
-  <link rel="stylesheet" href="libs/reveal.js/3.8.0/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="libs/reveal.js/3.8.0/css/theme/night.css" id="theme">
   
   
   <link rel="stylesheet" href="libs/reveal.js/3.8.0/plugin/title-footer/title-footer-mod.css" />
@@ -96,7 +96,7 @@
 
   <!-- Theme used for syntax highlighting of code -->
   
-  <link rel="stylesheet" href="libs/highlight.js/9.12.0/Zenburn.css">
+  <link rel="stylesheet" href="libs/highlight.js/9.12.0/monokai.css">
   
 
   
@@ -275,7 +275,534 @@
     
         <section >
             
-            <h1><a id="user-content-mern-basic-practice" class="anchor" href="#mern-basic-practice" aria-hidden="true"></a>MERN Basic Practice</h1>
+            <h3><a id="user-content-mern-project-overview" class="anchor" href="#mern-project-overview" aria-hidden="true"></a>MERN Project Overview</h3>
+<style>
+pre {
+  background: #303030;
+  padding: 10px 16px;
+  border-radius: 0.3em;
+  counter-reset: line;
+}
+pre code[class*="="] .line {
+  display: block;
+  line-height: 1.8rem;
+  font-size: 1em;
+}
+pre code[class*="="] .line:before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  border-right: 1px solid #ddd;
+  padding: 0 .5em;
+  margin-right: .5em;
+  color: #888
+}
+
+.reveal .slides > section > section {
+  text-align:left; 
+}
+
+h1,h2,h3,h4 {
+  text-align: center
+}
+
+p {
+  text-align: center;
+}
+</style>
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <p>Yubin, Hsu</p>
+<p>TSID / NTAP</p>
+<p><img src="res/2021-07-20-07-24-04.png" alt=""></p>
+<p><a href="mailto:ybhsu@tsmc.com">ybhsu@tsmc.com</a></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3><a id="user-content-outline" class="anchor" href="#outline" aria-hidden="true"></a>Outline</h3>
+<ul>
+<li>MERN Project Arch.</li>
+<li>Create MERN project from 0 to 1</li>
+<li>Introduction of our product</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h3><a id="user-content-mern-project-arch" class="anchor" href="#mern-project-arch" aria-hidden="true"></a>MERN Project Arch.</h3>
+<ul>
+<li>Frontend
+<ul>
+<li>React</li>
+</ul>
+</li>
+<li>Backend
+<ul>
+<li>Fastify</li>
+</ul>
+</li>
+<li>Database
+<ul>
+<li>MongoDB</li>
+</ul>
+</li>
+</ul>
+<p><img src="res/2021-07-20-07-26-35.png" alt=""></p>
+
+            </section>
+        
+            <section >
+                <h3><a id="user-content-deployment-strategy" class="anchor" href="#deployment-strategy" aria-hidden="true"></a>Deployment Strategy</h3>
+<ol>
+<li>Frontend server and Backend server</li>
+<li>Only Backend server</li>
+</ol>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-1-frontend-server-and-backend-server" class="anchor" href="#1-frontend-server-and-backend-server" aria-hidden="true"></a>1. Frontend server and Backend server</h4>
+<ul>
+<li>Frontend
+<ul>
+<li>Has its own server to serve the frontend files (HTML, CSS, JavaScript)</li>
+<li>Listen a port different from backend</li>
+</ul>
+</li>
+<li>Backend
+<ul>
+<li>Listen a port different from frontend</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <p><img src="res/2021-07-20-11-11-40.png" alt=""></p>
+<ul>
+<li>CORS issue</li>
+<li>User can visit website even backend server is down</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-2-only-backend-server" class="anchor" href="#2-only-backend-server" aria-hidden="true"></a>2. Only Backend Server</h4>
+<ul>
+<li>use backend server to serve frontend code</li>
+</ul>
+<p><img src="res/2021-07-20-11-12-42.png" alt=""></p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h3><a id="user-content-create-mern-project" class="anchor" href="#create-mern-project" aria-hidden="true"></a>Create MERN Project</h3>
+
+            </section>
+        
+            <section >
+                <p>Environment</p>
+<ul>
+<li>Node v14</li>
+<li>docker (for create MongoDB container)</li>
+</ul>
+<p><img src="res/2021-07-20-11-56-30.png" alt=""></p>
+
+            </section>
+        
+            <section >
+                <p>Editor</p>
+<ul>
+<li>vscode</li>
+<li>GitPod (<a href="https://gitpod.io">https://gitpod.io</a>)</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <ul>
+<li>create project folder</li>
+</ul>
+<pre><code class="language-bash=">mkdir myMernProject
+cd myMernProject
+git init
+</code></pre>
+<ul>
+<li>create backend project</li>
+</ul>
+<pre><code class="language-bash=">mkdir backend
+cd backend
+npm init
+</code></pre>
+
+            </section>
+        
+            <section >
+                <ul>
+<li>Install dependencies of backend project</li>
+</ul>
+<pre><code class="language-bash=">npm i fastify fastify-cors pino-pretty mongoose dotenv
+npm i -D typescript @types/node @types/mongoose
+npx tsc --init
+</code></pre>
+
+            </section>
+        
+            <section >
+                <p>edit backend/tsconfig.json</p>
+<pre><code class="language-json=">&quot;include&quot;: [&quot;src/**/*.ts&quot;],
+&quot;exclude&quot;: [&quot;node_modules&quot;, &quot;.vscode&quot;],
+
+&quot;compilerOptions&quot;: {
+  &quot;outDir&quot;: &quot;./out&quot;,
+  &quot;rootDir&quot;: &quot;./src&quot;, 
+}
+
+</code></pre>
+
+            </section>
+        
+            <section >
+                <p>create backend/.env</p>
+<pre><code class="language-plaintext">MONGODB_URL=mongodb://localhost:27017
+MONGO_DATABASE=mern_demo
+FASTIFY_PORT=8888
+FASTIFY_ENABLE_LOGGING=true
+ENV=dev
+</code></pre>
+
+            </section>
+        
+            <section >
+                <p>create backend/plugins/mongodb.ts</p>
+<pre><code class="language-javascript=">import mongoose from 'mongoose'
+import * as dotEnv from 'dotenv'
+
+dotEnv.config()
+const host = process.env.MONGO_HOST || 'localhost'
+const port = process.env.MONGO_PORT || 27017
+const database = process.env.MONGO_DATABASE || 'fastify'
+
+const establishConnection = () =&gt; {
+  if (!process.env.JEST_WORKER_ID &amp;&amp; mongoose.connection.readyState === 0) {
+    mongoose.connect(
+      `mongodb://${host}:${port}/${database}`,
+      { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false },
+      (err) =&gt; {
+        if (!err) console.log('MongoDB connection successful.')
+        else console.log('Error in DB connection : ' + JSON.stringify(err, undefined, 2))
+      }
+    )
+  } else {
+    console.log('MongoDB has connected.')
+  }
+}
+
+export { establishConnection }
+</code></pre>
+
+            </section>
+        
+            <section >
+                <p>create backend/src/server.ts</p>
+<pre><code class="language-typescript=">import fastify, { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify'
+import { Server, IncomingMessage, ServerResponse } from 'http'
+import { establishConnection } from './plugins/mongodb'
+
+const server: FastifyInstance&lt;Server, IncomingMessage, ServerResponse&gt; = fastify({
+    logger: { prettyPrint: true }
+})
+
+const startFastify: (port: number) =&gt; FastifyInstance&lt;Server, IncomingMessage, ServerResponse&gt; = (port) =&gt; {
+
+    server.register(require('fastify-cors'), {})
+    
+    server.listen(port, (err, _) =&gt; {
+        if (err) {
+            console.error(err)
+            process.exit(0)
+        }
+        establishConnection()
+    })
+
+    server.get('/ping', async (request: FastifyRequest, reply: FastifyReply) =&gt; {
+        return reply.status(200).send({ msg: 'pong' })
+    })
+
+    return server
+}
+
+export { startFastify }
+</code></pre>
+
+            </section>
+        
+            <section >
+                <p>create backend/src/index.ts</p>
+<pre><code class="language-typescript=">import { startFastify } from './server'
+
+// Start your server
+const server = startFastify(8888)
+
+export { server }
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-build-and-run" class="anchor" href="#build-and-run" aria-hidden="true"></a>build and run</h4>
+<ul>
+<li>make sure you have mongodb</li>
+</ul>
+<pre><code>docker run -d -p 27017:27017 mongo
+</code></pre>
+<ul>
+<li>build with tsc, run with node</li>
+</ul>
+<pre><code>tsc
+node out/index.js
+</code></pre>
+<p><img src="res/2021-07-20-13-05-51.png" alt=""></p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+        <section >
+            
+            <p>visit the endpoint</p>
+<p><img src="res/2021-07-20-13-14-45.png" alt=""></p>
+
+            </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <p>Add Mongo Schema</p>
+
+            </section>
+        
+            <section >
+                <p>create backend/src/models/cat.ts</p>
+<pre><code class="language-typescript=">import { model, Schema } from 'mongoose'
+
+const catSchema: Schema = new Schema(
+    {
+        name: {
+            type: String,
+            required: true
+        }
+    },
+    {
+        timestamps: true
+    }
+)
+
+export default model(&quot;Cat&quot;, catSchema)
+</code></pre>
+
+            </section>
+        
+            <section >
+                <p>add API endpoint</p>
+<ul>
+<li>edit backend/src/server.ts</li>
+</ul>
+<pre><code class="language-typescript=">import Cat from './models/cat'
+
+server.get('/cats', async (request: FastifyRequest, reply: FastifyReply) =&gt; {
+    const cats = await Cat.find({}).exec()
+    return reply.status(200).send({ cats })
+})
+</code></pre>
+
+            </section>
+        
+            <section >
+                <p>visit the endpoint</p>
+<p><img src="res/2021-07-20-13-29-26.png" alt=""></p>
+
+            </section>
+        
+            <section >
+                <p>Create a endpoint for adding data</p>
+<ul>
+<li>edit backend/src/server.ts</li>
+</ul>
+<pre><code class="language-typescript=">server.post('/cats', async (request: FastifyRequest, reply: FastifyReply) =&gt; {
+    const postBody = request.body
+    const cat = await Cat.create(postBody)
+    return reply.status(200).send({ cat })
+})
+</code></pre>
+
+            </section>
+        
+            <section >
+                <p>rebuild and rerun</p>
+<ul>
+<li>use API client to send json data
+<ul>
+<li>Postman</li>
+<li>curl</li>
+<li>Thunder Client (vscode extension)</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <p>Thunder Client</p>
+<p><img src="res/2021-07-20-13-53-53.png" alt=""></p>
+
+            </section>
+        
+            <section >
+                <p>POST <a href="http://localhost:8888/cats">http://localhost:8888/cats</a></p>
+<p>with json body</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;fatOrange&quot;
+}
+</code></pre>
+<p><img src="res/2021-07-20-13-55-33.png" alt=""></p>
+
+            </section>
+        
+            <section >
+                <p>Get the response</p>
+<p><img src="res/2021-07-20-13-56-04.png" alt=""></p>
+
+            </section>
+        
+            <section >
+                <p>Finish API</p>
+<ul>
+<li>GET /cats</li>
+<li>POST /cats</li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <p>Define custom npm scripts</p>
+<ul>
+<li>edit backend/package.json</li>
+</ul>
+<pre><code class="language-json=">&quot;scripts&quot;: {
+  &quot;build&quot;: &quot;tsc&quot;,
+  &quot;start&quot;: &quot;node out/index.js&quot;
+},
+</code></pre>
+
+            </section>
+        
+            <section >
+                <p>Use custom npm script</p>
+<p><img src="res/2021-07-20-14-07-09.png" alt=""></p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+        <section >
+            
+            <p>Create a Frontend (React) Project</p>
+
+            </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <p>Use create-react-app module</p>
+<p><a href="https://github.com/facebook/create-react-app">https://github.com/facebook/create-react-app</a></p>
+<pre><code>cd ..
+npx create-react-app frontend --template typescript
+</code></pre>
+
+            </section>
+        
+            <section >
+                <p>Run the frontend project</p>
+<pre><code>cd frontend
+npm run start
+</code></pre>
+<p><img src="res/2021-07-20-14-20-39.png" alt=""></p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+        <section >
+            
+            <p>Final project repo</p>
+<p><a href="https://github.com/yubinTW/MERN-Simple">https://github.com/yubinTW/MERN-Simple</a></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <p>Product X</p>
+<p><a href="https://github.com/yubinTW/demo_x">https://github.com/yubinTW/demo_x</a></p>
 
             </section>
     
@@ -299,7 +826,7 @@
         controlsLayout: 'bottom-right',
         controlsBackArrows: 'faded',
         progress: true,
-        slideNumber: false,
+        slideNumber: true,
         history: true,
         keyboard: true,
         overview: true,
@@ -321,7 +848,7 @@
         mouseWheel: false,
         hideAddressBar: true,
         previewLinks: false,
-        transition: 'default',
+        transition: 'slide',
         transitionSpeed: 'default',
         backgroundTransition: 'default',
         viewDistance: 3,

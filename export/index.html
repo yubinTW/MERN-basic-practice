@@ -492,7 +492,8 @@ npx tsc --init
         
             <section >
                 <p>create backend/.env</p>
-<pre><code class="language-plaintext">MONGODB_URL=mongodb://localhost:27017
+<pre><code class="language-plaintext">MONGO_HOST=localhost
+MONGO_PORT=27017
 MONGO_DATABASE=mern_demo
 FASTIFY_PORT=8888
 FASTIFY_ENABLE_LOGGING=true
@@ -548,7 +549,6 @@ const startFastify: (port: number) =&gt; FastifyInstance&lt;Server, IncomingMess
     server.listen(port, (err, _) =&gt; {
         if (err) {
             console.error(err)
-            process.exit(0)
         }
         establishConnection()
     })

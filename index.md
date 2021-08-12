@@ -180,7 +180,8 @@ edit backend/tsconfig.json
 create backend/.env
 
 ```plaintext
-MONGODB_URL=mongodb://localhost:27017
+MONGO_HOST=localhost
+MONGO_PORT=27017
 MONGO_DATABASE=mern_demo
 FASTIFY_PORT=8888
 FASTIFY_ENABLE_LOGGING=true
@@ -238,7 +239,6 @@ const startFastify: (port: number) => FastifyInstance<Server, IncomingMessage, S
     server.listen(port, (err, _) => {
         if (err) {
             console.error(err)
-            process.exit(0)
         }
         establishConnection()
     })
